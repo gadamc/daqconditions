@@ -28,7 +28,7 @@ function(doc) {
       var alreadyEmitted = []
       for(var i in doc.Detecteurs){
         var det = doc.Detecteurs[i];
-        if (det.bolometer && det["Bolo.hote"] == doc.Hote &&  alreadyEmitted.indexOf(det.bolometer) != -1){
+        if (det.bolometer && det["Bolo.hote"] == doc.Hote &&  alreadyEmitted.indexOf(det.bolometer) == -1){
           alreadyEmitted.push(det.bolometer);
           
           emit( [doc.Condition, det.bolometer, doc.run_name + "_" + zeroPad(doc.file_number,3)] , emitVal);
