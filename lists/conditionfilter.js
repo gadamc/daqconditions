@@ -1,8 +1,8 @@
 function(head, req) {
 
   //
-  //you should really really use this with the mapReduce View called 'condition' found 
-  //in this design document. If you don't use this mapReduce View, I have no idea 
+  //you should really really use this with the mapReduce Views called 'conditionrun' or 'conditionbolorun' found 
+  //in this design document. If you don't use these mapReduce View, I have no idea 
   //what will happen! This is why the name of this list function is called "conditionfilter"
   //
   //This list function acts like a filter. It filters the resulting rows produced by the 'condition'

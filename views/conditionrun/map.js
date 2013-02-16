@@ -18,23 +18,12 @@ function(doc) {
   }
 
   if(doc.type == "daqdocument" && doc.Condition && doc.Temperature
-    && doc['proc1']['file_size'] && doc['proc1']['file'] && doc.run_name && doc.file_number){
+    && doc.proc1 && doc['proc1']['file_size'] && doc['proc1']['file'] && doc.run_name && doc.file_number){
 
     var emitVal = [doc.Temperature, doc['proc1']['file'], doc['proc1']['file_size']]
 
     emit( [doc.Condition, doc.run_name + "_" + zeroPad(doc.file_number,3)] , emitVal);
   
-    if( doc.Detecteurs && doc.Hote){
-      var alreadyEmitted = []
-      for(var i in doc.Detecteurs){
-        var det = doc.Detecteurs[i];
-        if (det.bolometer && det["Bolo.hote"] == doc.Hote &&  alreadyEmitted.indexOf(det.bolometer) == -1){
-          alreadyEmitted.push(det.bolometer);
-          
-          emit( [doc.Condition, det.bolometer, doc.run_name + "_" + zeroPad(doc.file_number,3)] , emitVal);
-
-        }
-      }
-    } 
+    
   }
 }
