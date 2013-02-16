@@ -17,7 +17,7 @@ function(doc) {
     return Array(+(zero > 0 && zero)).join("0") + num;
   }
 
-  if(doc.type == "daqdocument" && doc.Condition && doc.Temperature && doc.Detecteurs && doc.Hote
+  if(doc.type == "daqdocument" && doc.Condition && doc.Temperature && doc.Detecteurs && isArray(doc.Detecteurs) && doc.Hote
     && doc.proc1 && doc['proc1']['file_size'] && doc['proc1']['file'] && doc.run_name && doc.file_number){
 
     var emitVal = [doc.Temperature, doc['proc1']['file'], doc['proc1']['file_size']]
