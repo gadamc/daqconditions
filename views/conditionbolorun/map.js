@@ -18,7 +18,7 @@ function(doc) {
   }
 
   if(doc.type == "daqdocument" && doc.Condition && doc.Temperature && doc.Detecteurs && isArray(doc.Detecteurs) && doc.Hote
-    && doc.proc1 && doc['proc1']['file_size'] && doc['proc1']['file'] && doc.run_name && doc.file_number){
+    && doc.proc1 && doc['proc1']['file_size'] && doc['proc1']['file'] && doc.run_name && doc.file_number !== undefined){
 
     var emitVal = [doc.Temperature, doc['proc1']['file'], doc['proc1']['file_size']]
   
